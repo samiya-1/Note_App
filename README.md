@@ -18,6 +18,6 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Screenshots
 
-![Landing page Screenshot ](screenshots/notesplash.png.png)
+![Landing page Screenshot ](screenshots/notesplash.png)
 ![Landing page Screenshot ](screenshots/noteapp.png)
 ![Landing page Screenshot ](screenshots/noteadd.png)
