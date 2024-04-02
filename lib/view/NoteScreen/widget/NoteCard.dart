@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:noteapp/controller/NotescreenController.dart';
+import 'package:share_plus/share_plus.dart';
 
 class NoteCard extends StatelessWidget {
   const NoteCard(
@@ -9,13 +10,13 @@ class NoteCard extends StatelessWidget {
       required this.date,
       required this.clrIndex,
       this.onDeletepress,
-       this.onEditPress});
+      this.onEditPress});
   final String title;
   final String des;
   final String date;
   final int clrIndex;
   final void Function()? onDeletepress;
-    final void Function()? onEditPress;
+  final void Function()? onEditPress;
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +36,7 @@ class NoteCard extends StatelessWidget {
               Text(title),
               Row(
                 children: [
-                  InkWell(
-                    onTap: onEditPress,
-                    child: Icon(Icons.edit)),
+                  InkWell(onTap: onEditPress, child: Icon(Icons.edit)),
                   SizedBox(
                     width: 20,
                   ),
@@ -60,7 +59,11 @@ class NoteCard extends StatelessWidget {
               SizedBox(
                 width: 20,
               ),
-              Icon(Icons.share),
+              InkWell(
+                  onTap: () {
+                    Share.share('$title\n$des');
+                  },
+                  child: Icon(Icons.share)),
             ],
           )
         ],
